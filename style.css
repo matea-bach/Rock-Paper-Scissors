@@ -1,0 +1,52 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color:lightslategray;
+    color:blanchedalmond;   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;      
+}
+header{
+    text-align: center;
+    border-bottom: solid 3px burlywood;
+}
+h1{
+    color:blanchedalmond;  
+    font-size: 60px;  
+}
+.score {
+ text-align: center; 
+ font-size:x-large; 
+}
+.positioning{
+    display: flex;
+    justify-content: space-around;
+}
+.buttons{
+    display: flex;
+    justify-content:center;  
+   
+}
+.stylebutton :hover{
+   background-color: lightgoldenrodyellow;   
+}
+.stylebutton{
+    margin: 1em 3em;
+}
+.far{
+    font-size: 250px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.75);
+}    
+i {
+    text-shadow:2px 4px 6px royalblue;
+    background: lightslategrey;      
+}
+#footer{
+    display: flex;
+    justify-content: center;
+}
