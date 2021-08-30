@@ -31,10 +31,10 @@ h1{
     justify-content:center;  
    
 }
-.stylebutton :hover{
+.button :hover{
    background-color: lightgoldenrodyellow;   
 }
-.stylebutton{
+.button{
     margin: 1em 3em;
 }
 .far{

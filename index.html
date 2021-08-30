@@ -8,13 +8,10 @@
   <script type="text/javascript" src="home.js"></script>
 </head>
 <body>
-  <script>
-    console.log("Welcome to Rock Paper Scissors Game!")
-  </script>
-
-  <header>
+  
+<header>
     <h1>Rock Paper Scissors</h1>
-  </header>
+</header>
 <main>
   <div class="scoreboard">
   <div class="score">
@@ -34,13 +31,13 @@
   <br>
 
    <div class="buttons">
-     <button class="stylebutton" id="paper" >
+     <button onclick=clickbutton() class="button" id="paper" >
       <i class="far fa-hand-paper"  aria-hidden="true"></i>
      </button>
-     <button class="stylebutton" id="Scissors">
+     <button onclick="clickbutton()" class="button" id="Scissors">
       <i class="far fa-hand-scissors" aria-hidden="true"></i>
      </button>
-     <button class="stylebutton" id="rock">
+     <button onclick="clickbutton()" class="button" id="rock">
       <i class="far fa-hand-rock" aria-hidden="true"></i>
      </button>
    </div>
@@ -50,5 +47,13 @@
   <p id="footer">JUST ANOTHER GAME</p>
 </footer>
   
+
+<script>
+  function clickbutton(){
+  
+  console.log("Click");
+  }
+</script>
 </body>
+
 </html>
