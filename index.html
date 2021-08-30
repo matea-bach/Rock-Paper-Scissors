@@ -31,13 +31,13 @@
   <br>
 
    <div class="buttons">
-     <button onclick=clickbutton() class="button" id="paper" >
+     <button onclick="clickbutton('Paper')" class="button" id="paper" >
       <i class="far fa-hand-paper"  aria-hidden="true"></i>
      </button>
-     <button onclick="clickbutton()" class="button" id="Scissors">
+     <button onclick="clickbutton('Scissors')" class="button" id="Scissors">
       <i class="far fa-hand-scissors" aria-hidden="true"></i>
      </button>
-     <button onclick="clickbutton()" class="button" id="rock">
+     <button onclick="clickbutton('Rock')" class="button" id="rock">
       <i class="far fa-hand-rock" aria-hidden="true"></i>
      </button>
    </div>
@@ -49,10 +49,12 @@
   
 
 <script>
-  function clickbutton(){
-  
-  console.log("Click");
+  function clickbutton(move){  
+    console.log(move);
   }
+  
+
+
 </script>
 </body>
 
