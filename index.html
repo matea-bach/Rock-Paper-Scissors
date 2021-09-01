@@ -17,12 +17,12 @@
   <div class="score">
     <div class="positioning">
    <div class="player score">
-    <p> PLAYER SCORE: </p> 
-    <span>0</span>
+    <p>PLAYER SCORE: </p> 
+    <span id="playerscore">0</span>
    </div>
    <div class="computer score">
-    <p> COMPUTER SCORE: </p>
-    <span>0</span>
+    <p>COMPUTER SCORE: </p>
+    <span id="computerscore">0</span>
    </div>
     </div>
   </div>
@@ -50,8 +50,21 @@
 
 <script>
   function clickbutton(move){  
+    
+    switch (move)  {
+      case 'Paper':
+        move = 'Scissors'
+        break;
+        case 'Scissors':
+          move = 'Rock'
+        break;
+        case 'Rock':
+          move = 'Paper'          
+    }
     console.log(move);
   }
+
+    
   
 
 
