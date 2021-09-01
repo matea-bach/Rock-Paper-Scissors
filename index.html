@@ -49,8 +49,19 @@
   
 
 <script>
+function getPlayerScore(){
+  let score = document.getElementById("playerscore").innerHTML;
+  console.log("Player", score);
+}
+
+function getComputerScore(){
+  let score = document.getElementById("computerscore").innerHTML;
+  console.log("Computer", score)
+}
+
   function clickbutton(move){  
-    
+    getPlayerScore();
+    getComputerScore();
     switch (move)  {
       case 'Paper':
         move = 'Scissors'
