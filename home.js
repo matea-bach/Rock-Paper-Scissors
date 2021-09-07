@@ -1,3 +1,9 @@
+/*
+home.js
+*/
+
+
+/*
 let player = 0
 let computer = 0
 let winner = ''

@@ -5,7 +5,7 @@
   <meta charset="UTF-8"/>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a96f39664f.js" crossorigin="anonymous"></script>  
-  <script type="text/javascript" src="home.js"></script>
+  <!-- <script type="text/javascript" src="home.js"></script> -->
 </head>
 <body>
   
@@ -49,6 +49,7 @@
   
 
 <script>
+  // grab span
 function getPlayerScore(){
   let score = document.getElementById("playerscore").innerHTML;
   console.log("Player", score);
@@ -58,10 +59,24 @@ function getComputerScore(){
   let score = document.getElementById("computerscore").innerHTML;
   console.log("Computer", score)
 }
+//  next step : set parameter new score which I am going to add to score: create two new functions
 
+function setPlayerScore(newScore){
+  console.log(newScore);
+  document.getElementById("playerscore").innerHTML = newScore;  
+}
+
+function setComputerScore (newScore){
+  console.log(newScore);
+  document.getElementById("computerscore").innerHTML = newScore;
+}
+
+// button onclick function
   function clickbutton(move){  
     getPlayerScore();
     getComputerScore();
+    setPlayerScore(1);
+    setComputerScore(2);
     switch (move)  {
       case 'Paper':
         move = 'Scissors'
