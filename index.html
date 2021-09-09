@@ -5,6 +5,11 @@
   <meta charset="UTF-8"/>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a96f39664f.js" crossorigin="anonymous"></script>  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;500&display=swap" rel="stylesheet">
+
+  
   <!-- <script type="text/javascript" src="home.js"></script> -->
 </head>
 <body>
@@ -53,11 +58,13 @@
 function getPlayerScore(){
   let score = document.getElementById("playerscore").innerHTML;
   console.log("Player", score);
+  return score;
 }
 
 function getComputerScore(){
   let score = document.getElementById("computerscore").innerHTML;
-  console.log("Computer", score)
+  console.log("Computer", score);
+  return score;
 }
 //  next step : set parameter new score which I am going to add to score: create two new functions
 
@@ -66,18 +73,20 @@ function setPlayerScore(newScore){
   document.getElementById("playerscore").innerHTML = newScore;  
 }
 
-function setComputerScore (newScore){
+function setComputerScore(newScore){
   console.log(newScore);
   document.getElementById("computerscore").innerHTML = newScore;
 }
 
 // button onclick function
-  function clickbutton(move){  
-    getPlayerScore();
-    getComputerScore();
-    setPlayerScore(1);
-    setComputerScore(2);
-    switch (move)  {
+  function clickbutton(playerMove){  
+    let playerScore = getPlayerScore();
+    playerScore++; 
+    let computerscore = getComputerScore();
+    computerscore++;
+    setPlayerScore(playerScore);
+    setComputerScore(computerscore);
+    switch (playerMove)  {
       case 'Paper':
         move = 'Scissors'
         break;
@@ -87,12 +96,14 @@ function setComputerScore (newScore){
         case 'Rock':
           move = 'Paper'          
     }
-    console.log(move);
+    console.log(playerMove);
   }
 
     
   
-
+// update get function - player and computer scores - actually return scores, not just log it,
+// clickbutton function - assign scores to different variables, add one to them, call set player,computer score and add one
+// implement logic - end game
 
 </script>
 </body>
