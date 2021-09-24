@@ -1,111 +1,127 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Rock Paper Scissors</title>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a96f39664f.js" crossorigin="anonymous"></script>  
+  <script src="https://kit.fontawesome.com/a96f39664f.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;500&display=swap" rel="stylesheet">
 
-  
+
   <!-- <script type="text/javascript" src="home.js"></script> -->
 </head>
+
 <body>
-  
-<header>
+
+  <header>
     <h1>Rock Paper Scissors</h1>
-</header>
-<main>
-  <div class="scoreboard">
-  <div class="score">
-    <div class="positioning">
-   <div class="player score">
-    <p>PLAYER SCORE: </p> 
-    <span id="playerscore">0</span>
-   </div>
-   <div class="computer score">
-    <p>COMPUTER SCORE: </p>
-    <span id="computerscore">0</span>
-   </div>
+  </header>
+  <main>
+    <div class="scoreboard">
+      <div class="score">
+        <div class="positioning">
+          <div class="player score">
+            <p>PLAYER SCORE: </p>
+            <span id="playerscore">0</span>
+          </div>
+          <div class="computer score">
+            <p>COMPUTER SCORE: </p>
+            <span id="computerscore">0</span>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      <div class="buttons">
+        <button onclick="clickbutton('Paper')" class="button" id="paper">
+          <i class="far fa-hand-paper" aria-hidden="true"></i>
+        </button>
+        <button onclick="clickbutton('Scissors')" class="button" id="Scissors">
+          <i class="far fa-hand-scissors" aria-hidden="true"></i>
+        </button>
+        <button onclick="clickbutton('Rock')" class="button" id="rock">
+          <i class="far fa-hand-rock" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
-  </div>
+  </main>
+  <footer>
+    <p id="footer">JUST ANOTHER GAME</p>
+  </footer>
 
-  <br>
-  <br>
 
-   <div class="buttons">
-     <button onclick="clickbutton('Paper')" class="button" id="paper" >
-      <i class="far fa-hand-paper"  aria-hidden="true"></i>
-     </button>
-     <button onclick="clickbutton('Scissors')" class="button" id="Scissors">
-      <i class="far fa-hand-scissors" aria-hidden="true"></i>
-     </button>
-     <button onclick="clickbutton('Rock')" class="button" id="rock">
-      <i class="far fa-hand-rock" aria-hidden="true"></i>
-     </button>
-   </div>
-  </div>
-</main> 
-<footer>
-  <p id="footer">JUST ANOTHER GAME</p>
-</footer>
-  
+  <script>
+    // grab span
+    function getPlayerScore() {
+      let score = document.getElementById("playerscore").innerHTML;
+      console.log("Player", score);
+      return score;
+    }
 
-<script>
-  // grab span
-function getPlayerScore(){
-  let score = document.getElementById("playerscore").innerHTML;
-  console.log("Player", score);
-  return score;
-}
+    function getComputerScore() {
+      let score = document.getElementById("computerscore").innerHTML;
+      console.log("Computer", score);
+      return score;
+    }
+    //  next step : set parameter new score which I am going to add to score: create two new functions
 
-function getComputerScore(){
-  let score = document.getElementById("computerscore").innerHTML;
-  console.log("Computer", score);
-  return score;
-}
-//  next step : set parameter new score which I am going to add to score: create two new functions
+    function setPlayerScore(newScore) {
+      console.log(newScore);
+      document.getElementById("playerscore").innerHTML = newScore;
+    }
 
-function setPlayerScore(newScore){
-  console.log(newScore);
-  document.getElementById("playerscore").innerHTML = newScore;  
-}
+    function setComputerScore(newScore) {
+      console.log(newScore);
+      document.getElementById("computerscore").innerHTML = newScore;
+    }
 
-function setComputerScore(newScore){
-  console.log(newScore);
-  document.getElementById("computerscore").innerHTML = newScore;
-}
 
-// button onclick function
-  function clickbutton(playerMove){  
-    let playerScore = getPlayerScore();
-    playerScore++; 
-    let computerscore = getComputerScore();
-    computerscore++;
-    setPlayerScore(playerScore);
-    setComputerScore(computerscore);
-    switch (playerMove)  {
-      case 'Paper':
-        move = 'Scissors'
-        break;
+    // button onclick function rock,paper,scissors -values of playermove
+    function clickbutton(playerMove) {
+      console.log("Start function");
+
+      if (getComputerScore() == 5) {
+        console.log("ENDGAME");
+        return ;
+      }
+      if (getPlayerScore() == 5) {
+        console.log("YOU LOST,TRY AGAIN")
+        return;
+      }
+      //log score and increment
+      let playerScore = getPlayerScore();
+      playerScore++;
+      let computerscore = getComputerScore();
+      computerscore++;
+      setPlayerScore(playerScore);
+      setComputerScore(computerscore);
+      switch (playerMove) {
+        case 'Paper':
+          move = 'Scissors'
+          break;
         case 'Scissors':
           move = 'Rock'
-        break;
+          break;
         case 'Rock':
-          move = 'Paper'          
+          move = 'Paper'
+      }
+      console.log(playerMove);
+      console.log("End function");      
     }
-    console.log(playerMove);
-  }
-
     
-  
+    
+
+
+
 // update get function - player and computer scores - actually return scores, not just log it,
 // clickbutton function - assign scores to different variables, add one to them, call set player,computer score and add one
-// implement logic - end game
-
-</script>
+// implement logic - end game; set computerscore variable, use boolean logic, compare computer-player move, and log endgame/ you won
+  </script>
 </body>
 
 </html>
