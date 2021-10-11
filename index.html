@@ -41,7 +41,7 @@
         <button onclick="clickbutton('Paper')" class="button" id="paper">
           <i class="far fa-hand-paper" aria-hidden="true"></i>
         </button>
-        <button onclick="clickbutton('Scissors')" class="button" id="Scissors">
+        <button onclick="clickbutton('Scissors')" class="button" id="scissors">
           <i class="far fa-hand-scissors" aria-hidden="true"></i>
         </button>
         <button onclick="clickbutton('Rock')" class="button" id="rock">
@@ -86,35 +86,58 @@
       console.log("Start function");
 
       if (getComputerScore() == 5) {
-        console.log("ENDGAME");
-        return ;
-      }
-      if (getPlayerScore() == 5) {
-        console.log("YOU LOST,TRY AGAIN")
+        console.log("YOU LOST, PLAY AGAIN?");
         return;
       }
-      //log score and increment
-      let playerScore = getPlayerScore();
-      playerScore++;
-      let computerscore = getComputerScore();
-      computerscore++;
-      setPlayerScore(playerScore);
-      setComputerScore(computerscore);
-      switch (playerMove) {
-        case 'Paper':
-          move = 'Scissors'
-          break;
-        case 'Scissors':
-          move = 'Rock'
-          break;
-        case 'Rock':
-          move = 'Paper'
+      if (getPlayerScore() == 5) {
+        console.log("YOU WON")
+        return;
       }
-      console.log(playerMove);
-      console.log("End function");      
+
+      // hardcode that computer always chooses rock
+      let computer = "Rock";
+      //return brakes out of the clickbutton function, it returns the "current" state
+      if (playerMove === "Rock") {
+        console.log("IT IS A TIE");
+        return;
+      }
+      if (playerMove === "Paper") {
+        console.log("PAPER BEATS ROCK");
+        let playerScore = getPlayerScore();
+        playerScore = parseInt(playerScore);
+        playerScore++;
+        setPlayerScore(playerScore);
+      }
+      if (playerMove === "Scissors") {
+        console.log("ROCK BEATS SCISSORS");
+        setComputerScore(parseInt(getComputerScore()) + 1);
+      }
+
+
+
+      //log score and increment
+      // let playerScore = getPlayerScore();
+      // playerScore++;
+      // let computerscore = getComputerScore();
+      // computerscore++;
+      // setPlayerScore(playerScore);
+      //   // setComputerScore(computerscore);
+
+      //   switch (playerMove) {
+      //     case 'Paper':
+      //       move = 'Scissors'
+      //       break;
+      //     case 'Scissors':
+      //       move = 'Rock'
+      //       break;
+      //     case 'Rock':
+      //       move = 'Paper'
+      //   }
+      //   console.log(playerMove);
+      //   console.log("End function");
     }
-    
-    
+
+
 
 
 
